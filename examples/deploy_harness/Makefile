@@ -1,10 +1,10 @@
-
+PROJECT_DIR ?= $(shell pwd)
 IMAGE_TAG ?= cuda
 IMAGE_NAME ?= jax
 
 .PHONY: build-docker
 build-docker:
-	docker buildx build --tag $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile .
+	docker buildx build --tag $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile $(PROJECT_DIR)
 
 .PHONY: build-singularity
 build-singularity: build-docker
