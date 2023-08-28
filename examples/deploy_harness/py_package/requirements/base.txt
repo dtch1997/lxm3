@@ -1,1 +1,2 @@
 jax[cuda11_local]
+jaxlib[cuda11_local]
